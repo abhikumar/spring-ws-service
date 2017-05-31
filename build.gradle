@@ -45,16 +45,12 @@ dependencies {
 }
 
 wsdl2java{
-    //wsdlsToGenerate = [
+    wsdlsToGenerate = [
          //   ['-p','com.soap.type', '-autoNameResolution',"$projectDir/src/main/resources/wsdl/MyService.wsdl"]
+         
             
-            
-    //]
-    
-      wsdlsToGenerate = [   //  2d-array of wsdls and cxf-parameters
-                ['src/main/resources/wsdl/firstwsdl.wsdl'],
-                ['-xjc','-b','bindingfile.xml','src/main/resources/wsdl/secondwsdl.wsdl']
-        ]
+             ['-p','com.soap.type','-xjc','-b',"$projectDir/src/main/resources/wsdl/binding.xjb","$projectDir/src/main/resources/wsdl/MyService.wsdl"]
+       ]
     generatedWsdlDir = file("$projectDir/generatedsources")
     wsdlDir = file("$projectDir/src/main/resources/wsdl")
     locale = Locale.FRANCE
